@@ -1,6 +1,7 @@
 package com.skymilk.composecalculator
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -18,6 +19,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
+            val infix = "20+3*2(2-4)"
+            val result = InfixToPostFix().postFixConversion(infix)
+            Log.d("결과", result)
+
             ComposeCalculatorTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
