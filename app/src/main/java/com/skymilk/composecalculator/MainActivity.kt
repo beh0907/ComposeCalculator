@@ -20,8 +20,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
-            val infix = "20+3*2(2-4)"
-            val result = InfixToPostFix().postFixConversion(infix)
+            val infix = "20+3*2*(2-4)"
+            val result = Model().getResult(infix)
             Log.d("결과", result)
 
             ComposeCalculatorTheme {
